@@ -7,7 +7,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-	여기는 index.jsp
-	<jsp:forward page="WEB-INF/views/main.jsp"/>
+	여기는 main.jsp야
+	<jsp:include page="common/header.jsp"/>
+		
+	<div style="height:600px">
+	</div>	
+		
+	<jsp:include page="common/footer.jsp"/>
 </body>
 </html>
