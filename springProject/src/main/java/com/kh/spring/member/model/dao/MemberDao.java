@@ -11,4 +11,9 @@ public class MemberDao {
 	public Member loginMember(SqlSession sqlSession, Member m) {
 		return sqlSession.selectOne("memberMapper.loginMember", m);
 	}
+
+//=================회원가입 (비번 암호화 추가)=====================
+	public int insertMember(SqlSession sqlSession, Member m) {
+		return sqlSession.insert("memberMapper.insertMember",m);
+	}
 }
