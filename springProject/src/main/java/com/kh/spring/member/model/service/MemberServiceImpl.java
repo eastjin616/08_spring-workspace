@@ -35,15 +35,20 @@ public class MemberServiceImpl implements MemberService {
 		int result = mDao.insertMember(sqlSession, m);
 		return result;
 	}
-//===============================================
+//============회원정보변경=========================
 	@Override
 	public int updateMember(Member m) {
-		return 0;
+		
+		int result = mDao.updateMember(sqlSession, m);
+		return result;
+		
 	}
-//===============================================
+//=================회원삭제===========================
 	@Override
 	public int deleteMember(String userId) {
-		return 0;
+		
+		int result = mDao.deleteMember(sqlSession, userId);
+		return result;
 	}
 //===============================================
 	@Override

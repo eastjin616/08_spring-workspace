@@ -1,6 +1,7 @@
 package com.kh.spring.member.model.dao;
 
 import org.apache.ibatis.session.SqlSession;
+import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.stereotype.Repository;
 
 import com.kh.spring.member.model.vo.Member;
@@ -16,4 +17,15 @@ public class MemberDao {
 	public int insertMember(SqlSession sqlSession, Member m) {
 		return sqlSession.insert("memberMapper.insertMember",m);
 	}
-}
+//=================회원 정보 변경=====================
+	
+	public int updateMember(SqlSessionTemplate sqlSession, Member m) {
+		return sqlSession.update("memberMapper.updateMember", m);
+	}
+//=================회원 삭제=====================
+
+	public int deleteMember(SqlSessionTemplate sqlSession, String userId) {
+		return sqlSession.update("memberMapper.deleteMember", userId);
+
+	}
+} 
