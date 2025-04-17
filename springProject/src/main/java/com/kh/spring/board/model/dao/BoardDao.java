@@ -27,5 +27,28 @@ public class BoardDao {
 		
 		return (ArrayList)sqlSession.selectList("boardMapper.selectList", null, rowBounds);
 	}
+//========================글쓰기=======================================================
 
+	public int insertBoard(SqlSessionTemplate sqlSession, Board b) {
+		return sqlSession.insert("boardMapper.insertBoard", b);
+	}
+	
+//========================상세조회=======================================================
+	public int increaseCount(SqlSessionTemplate sqlSession, int bno) {
+		return sqlSession.update("boardMapper.increaseCount",bno);
+	}
+	
+	public Board selectBoard(SqlSessionTemplate sqlSession, int bno) {
+		return sqlSession.selectOne("boardMapper.selectBoard",bno);
+	}
+//========================상세조회(삭제)=======================================================
+	
+	public int deleteBoard(SqlSessionTemplate sqlSession, int boardNo) {
+		return sqlSession.update("boardMapper.deleteBoard",boardNo);
+	}
+//=========================상세조회(수정)=======================================================
+	
+	public int updateBoard(SqlSessionTemplate sqlSession, Board b) {
+		return sqlSession.update("boardMapper.updateBoard", b);
+	}
 }

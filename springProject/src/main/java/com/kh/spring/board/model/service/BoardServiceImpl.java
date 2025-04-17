@@ -30,30 +30,32 @@ public class BoardServiceImpl implements BoardService{
     public ArrayList<Board> selectList(PageInfo pi) {
         return bDao.selectList(sqlSession, pi);
     }
-//================================================================================
+//======================글쓰기==================================================
     @Override
     public int insertBoard(Board b) {
-        return 0;
+    	return bDao.insertBoard(sqlSession, b);
+    }
+    
+//======================상세조회==================================================
+
+    @Override
+    public int increaseCount(int bno) {
+    	return bDao.increaseCount(sqlSession, bno);
     }
 
     @Override
-    public int increaseCount(int boardNo) {
-        return 0;
+    public Board selectBoard(int bno) {
+       return bDao.selectBoard(sqlSession, bno);
     }
-
-    @Override
-    public Board selectBoard(int boardNo) {
-        return null;
-    }
-
+//====================상세조회 글 (삭제)=============================
     @Override
     public int deleteBoard(int boardNo) {
-        return 0;
+    	return bDao.deleteBoard(sqlSession, boardNo);
     }
-
+//====================상세조회 글 (수정)=============================
     @Override
     public int updateBoard(Board b) {
-        return 0;
+        return bDao.updateBoard(sqlSession, b);
     }
 
     @Override

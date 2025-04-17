@@ -87,6 +87,14 @@
                 </tbody>
             </table>
             <br>
+            
+            <script>
+            	$(function(){
+            		$("#boardList>tbody>tr").click(function(){
+            			location.href = 'detail.bo?bno='+ $(this).children(".bno").text()
+            		})
+            	})
+            </script>
 		
 			
             <div id="pagingArea">
