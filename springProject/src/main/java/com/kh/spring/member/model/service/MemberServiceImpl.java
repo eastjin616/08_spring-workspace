@@ -50,10 +50,10 @@ public class MemberServiceImpl implements MemberService {
 		int result = mDao.deleteMember(sqlSession, userId);
 		return result;
 	}
-//===============================================
+//================아이디 중복체크========================
 	@Override
 	public int idCheck(String checkId) {
-		return 0;
+		return mDao.idCheck(sqlSession, checkId);
 	}
 
 }
