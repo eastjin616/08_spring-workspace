@@ -211,6 +211,85 @@
 		})
 	</script>
 	
+	<hr>
 	
+	<h2>지진 실내 구호소 조회 서비스</h2>
+	
+	<input type="button" value="tq" id="btn">
+	
+	<div id="result"></div>
+	
+	<script>
+		$(function(){
+			$("#btn").click(function(){
+					$.ajax({
+						url:"zizn.do",
+						
+						success:function(data){
+							console.log(data)
+							
+							let $table = $("<table border='1'></table>");
+							let $thead = $("<thead></thead>");
+							let headTr = "<tr>"
+										   +	"<th>arcd</th>"
+										   +	"<th>acmdfclty_sn</th>"
+										   +	"<th>ctprvn_nm</th>"
+										   +	"<th>sgg_nm</th>"
+										   +	"<th>vt_acmdfclty_nm</th>"
+										   +	"<th>rdnmadr_cd</th>"
+										   +	"<th>bdong_cd</th>"
+										   +	"<th>hdong_cd</th>"
+										   +	"<th>dtl_adres</th>"
+										   +	"<th>fclty_ar</th>"
+										   +	"<th>xcord</th>"
+										   +	"<th>ycord</th>"
+										   +	"<th>mngps_nm</th>"
+										   +	"<th>mngps_telno</th>"
+										   +	"<th>acmdfclty_dtl_cn</th>"
+										   +	"<th>rn_adres</th>"
+										   +	"<th>mngdpt_nm</th>"
+										   +	"<th>vt_acmd_psbl_nmpr</th>"
+									   + "</tr>";
+							$thead.html(headTr);
+							
+							let $tbody = $("<tbody></tbody>");
+							let bodyTr = "";
+							
+							$(data).find("row").each(function(i, zi){
+								
+								bodyTr += "<tr>"
+								        +	"<td>" +$(zi).find("arcd").text() + "</td>"
+								        +	"<td>" +$(zi).find("acmdfclty_sn").text() + "</td>"
+								        +	"<td>" +$(zi).find("ctprvn_nm").text() + "</td>"
+								        +	"<td>" +$(zi).find("sgg_nm").text() + "</td>"
+								        +	"<td>" +$(zi).find("vt_acmdfclty_nm").text() + "</td>"
+								        +	"<td>" +$(zi).find("rdnmadr_cd").text() + "</td>"
+								        +	"<td>" +$(zi).find("bdong_cd").text() + "</td>"
+								        +	"<td>" +$(zi).find("hdong_cd").text() + "</td>"
+								        +	"<td>" +$(zi).find("dtl_adres").text() + "</td>"
+								        +	"<td>" +$(zi).find("fclty_ar").text() + "</td>"
+								        +	"<td>" +$(zi).find("xcord").text() + "</td>"
+								        +	"<td>" +$(zi).find("ycord").text() + "</td>"
+								        +	"<td>" +$(zi).find("mngps_nm").text() + "</td>"
+								        +	"<td>" +$(zi).find("mngps_telno").text() + "</td>"
+								        +	"<td>" +$(zi).find("acmdfclty_dtl_cn").text() + "</td>"
+								        +	"<td>" +$(zi).find("rn_adres").text() + "</td>"
+								        +	"<td>" +$(zi).find("mngdpt_nm").text() + "</td>"
+								        +	"<td>" +$(zi).find("vt_acmd_psbl_nmpr").text() + "</td>"
+								        + "</tr>";
+							})
+							
+							$tbody.html(bodyTr);
+
+							$table.append($thead, $tbody).appendTo("#result");
+					},
+					error:function(){
+						console.log("지진 조회 실패");
+					
+					}
+					})
+				})
+			})
+		</script>
 </body>
 </html>
