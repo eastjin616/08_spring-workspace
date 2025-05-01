@@ -15,15 +15,12 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.kh.opendata.model.vo.AirVo;
 
-public class AirPollutionJavaApp {
+public class test1 {
 
-   // 발급받은 인증키 정보 변수에 담아두기
-   public static final String servicekey = "VSgXc34Vs94ijfKVTpeJr85n70S9Xq9bY8PLyw9wCrGAzraqE4Gj6ecSZ88ZSiuSvN3JC1aXQZ0NVZDGuuugoA%2BoK4htDcCcYdGhnwQ%3D%3D";
+   public static final String servicekey = "U02uX7TWYMipQZdwIgIXFCBgiweQj4IhyqFruKsW2XtPQ0JwfBtrr7SNOODQnPcZK1K8q%2BoK4htDcCcYdGhnwQ%3D%3D";
    
    public static void main(String[] args) throws IOException {
 
-      
-      // OPEN API 서버로 요청하고자 하는 URL 만들기
       String url = "https://apis.data.go.kr/B552584/ArpltnInforInqireSvc/getCtprvnRltmMesureDnsty";
       url += "?serviceKey="+servicekey;
       url += "&sidoName="+URLEncoder.encode("서울", "UTF-8");
