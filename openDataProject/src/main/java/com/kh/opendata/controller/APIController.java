@@ -79,44 +79,15 @@ public class APIController {
 	}
 	
 //===================정당===============================================================
-//	@ResponseBody
-//	@RequestMapping(value="jd.do", produces="application/json; charset=utf-8")
-//	public String selectJd() throws IOException {
-//		
-//		String url = "https://apis.data.go.kr/9760000/CommonCodeService/getCommonPartyCodeList";
-//		url+="?serviceKey=" + serviceKey;
-//		url+="&sgId=20231011";
-//		url+="&numOfRows=10";
-//		url+="&resultType=json";
-//		
-//		URL requestUrl = new URL(url);
-//		HttpURLConnection urlConnection = (HttpURLConnection)requestUrl.openConnection();
-//		urlConnection.setRequestMethod("GET");
-//		
-//		BufferedReader br = new BufferedReader(new InputStreamReader( urlConnection.getInputStream()));
-//		
-//		String responseText="";
-//		String line;
-//		while((line = br.readLine())!= null) {
-//			responseText += line;
-//		}
-//	
-//		br.close();
-//		urlConnection.disconnect();
-//		
-//		return responseText;
-//
-//	}
-	
 	@ResponseBody
-	@RequestMapping(value="jd.do", produces="text/xml; charset=utf-8")
+	@RequestMapping(value="jd.do", produces="application/json; charset=utf-8")
 	public String selectJd() throws IOException {
 		
 		String url = "https://apis.data.go.kr/9760000/CommonCodeService/getCommonPartyCodeList";
 		url+="?serviceKey=" + serviceKey;
 		url+="&sgId=20231011";
 		url+="&numOfRows=10";
-		url+="&resultType=xml";
+		url+="&resultType=json";
 		
 		URL requestUrl = new URL(url);
 		HttpURLConnection urlConnection = (HttpURLConnection)requestUrl.openConnection();
@@ -136,5 +107,34 @@ public class APIController {
 		return responseText;
 
 	}
+	
+//	@ResponseBody
+//	@RequestMapping(value="jd.do", produces="text/xml; charset=utf-8")
+//	public String selectJd() throws IOException {
+//		
+//		String url = "https://apis.data.go.kr/9760000/CommonCodeService/getCommonPartyCodeList";
+//		url+="?serviceKey=" + serviceKey;
+//		url+="&sgId=20231011";
+//		url+="&numOfRows=10";
+//		url+="&resultType=xml";
+//		
+//		URL requestUrl = new URL(url);
+//		HttpURLConnection urlConnection = (HttpURLConnection)requestUrl.openConnection();
+//		urlConnection.setRequestMethod("GET");
+//		
+//		BufferedReader br = new BufferedReader(new InputStreamReader( urlConnection.getInputStream()));
+//		
+//		String responseText="";
+//		String line;
+//		while((line = br.readLine())!= null) {
+//			responseText += line;
+//		}
+//	
+//		br.close();
+//		urlConnection.disconnect();
+//		
+//		return responseText;
+//
+//	}
 
 }
