@@ -16,6 +16,7 @@ import com.kh.opendata.model.vo.AirVo;
 
 public class AirPollutionJavaApp {
 
+<<<<<<< HEAD
 	public static final String servicekey = "VSgXc34Vs94ijfKVTpeJr85n70S9Xq9bY8PLyw9wCrGAzraqE4Gj6ecSZ88ZSiuSvN3JC1aXQZ0NVZDGuuugoA%3D%3D";
 	public static void main(String[] args) throws IOException {
 		
@@ -72,5 +73,11 @@ public class AirPollutionJavaApp {
 	
 	
 	}
+=======
+   // 발급받은 인증키 정보 변수에 담아두기
+   public static final String servicekey = "VSgXc34Vs94ijfKVTpeJr85n70S9Xq9bY8PLyw9wCrGAzraqE4Gj6ecSZ88ZSiuSvN3JC1aXQZ0NVZDGuuugoA%2BoK4htDcCcYdGhnwQ%3D%3D";
+   
+   public static void main(String[] args) throws IOException {
+>>>>>>> 27a450a2113c5dcd98eeae9dcf674489aaaf4239
 
 }

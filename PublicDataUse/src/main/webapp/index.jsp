@@ -100,8 +100,6 @@ let item = itemArr[i];
 			 +	  "<td>"+ item.so2Value +"</td>"
 			 +	  "<td>"+ item.o3Value +"</td>"
 			 + "</tr>"
-
-
 }
 
 $("#result1 tbody").html(value);
